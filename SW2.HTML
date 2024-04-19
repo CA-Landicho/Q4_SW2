@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="net">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q4 SW2 </title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa"> <!-- for some reason the font is not working -->
+	<style> 
+		body {
+			background-color: #b7b6af;
+			background-image: url(https://i.pinimg.com/originals/c2/34/6e/c2346efe085a5724d4f3fe6e7e43b560.jpg);
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 100%;
+			font-family: Comfortaa;
+
+		}
+		#buttons {
+			background-color: #5c5b58;
+		}
+		#form {
+			background-color: #2e2e2c;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<h1> Quick Calculator 🤓☝️ </h1>
+		<div class="col-md-6" id="form"> 
+			<form class="form-group">
+				<label class="text-light"> Enter the first number: </label>
+					<input type="number" class="form-control bg-info col-md-10" id="num1">
+				<label class="text-light"> Enter the second number: </label>
+					<input type="number" class="form-control bg-info col-md-10" id="num2">
+					<br> <br> 
+			</form>
+		</div>
+		<div class="col-md-6 " id="buttons">
+			<button class="bg-danger text-light col-md-4" type="submit" id="comp" onclick="compare()"> Compare the values if they are EQUAL </button>
+			<button class="bg-warning text-light col-md-4" type="submit" id="rem" onclick="remainder()"> Get the REMAINDER of the values when divided </button>
+			<br><br>  
+			<button class="bg-success text-light col-md-4"type="submit" id="exp" onclick="exponent()"> Raise the first number to the second number </button> 
+			<button class="bg-primary text-light col-md-4" type="submit" id="not" onclick="not1()"> Check if the values are NOT equal </button>
+			<br> <br> 
+		
+
+			<details ontoggle="message()" class="text-light">
+				<summary> Click here</summary>
+					<i> Click the buttons above to calculate. </i>
+			</details>
+		</div>
+	<script type="text/javascript">
+	function compare(){ //compare num1 and num2 if their values are equal 
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		var compare = Number(num1) == Number(num2);
+		window.alert(compare);
+		}
+	function remainder(){ //get the remainder of num 1 when divided to num2
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		var remainder = Number(num1) % Number(num2);
+		window.alert(remainder);
+		}
+	function exponent(){ //raise num1 to the power of num2
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		var exponent = Number(num1) ** Number(num2);
+		window.alert(exponent);
+	}
+	function not1(){  //check if num1 is NOT equal to num2
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		var not1 = !(Number(num1) == Number(num2));
+		window.alert(not1);
+		}
+	</script>
+</center>
+</body>
+</html>
